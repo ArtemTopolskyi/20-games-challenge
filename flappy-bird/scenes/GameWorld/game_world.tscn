@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0we148n745ul"]
+
+[ext_resource type="PackedScene" uid="uid://cu0kojsg35dgb" path="res://scenes/Bird/bird.tscn" id="1_xto18"]
+[ext_resource type="PackedScene" uid="uid://bcgbrrdgbvvxm" path="res://scenes/PipeSpawner/pipe_spawner.tscn" id="2_xto18"]
+[ext_resource type="PackedScene" uid="uid://d013knlih05g0" path="res://scenes/Ground/ground.tscn" id="3_vldkp"]
+
+[node name="GameWorld" type="Node2D"]
+
+[node name="PipeSpawner" parent="." instance=ExtResource("2_xto18")]
+
+[node name="Bird" parent="." instance=ExtResource("1_xto18")]
+position = Vector2(100, 300)
+
+[node name="Ground" parent="." instance=ExtResource("3_vldkp")]
+position = Vector2(0, 640)
