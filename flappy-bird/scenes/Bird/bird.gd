@@ -3,9 +3,17 @@ extends CharacterBody2D
 const GRAVITY = 980.0;
 const JUMP_VELOCITY = -350.0
 
+var is_activated = false;
 var jump_triggered = false;
 
+func activate() -> void:
+	is_activated = true;
+
+
 func _physics_process(delta: float) -> void:
+	if !is_activated:
+		return;
+
 	velocity.y += GRAVITY * delta;
 	
 	if jump_triggered:

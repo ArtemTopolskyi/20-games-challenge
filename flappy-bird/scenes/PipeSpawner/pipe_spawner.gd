@@ -6,6 +6,11 @@ const PIPE_WIDTH = 80;
 const PIPE_HEIGHT = 640;
 const PIPES_VERTICAL_GAP = 160;
 
+func start_timer() -> void:
+	print($Timer);
+	$Timer.start();
+
+
 func _on_timer_timeout() -> void:
 	spawn_pipe();
 

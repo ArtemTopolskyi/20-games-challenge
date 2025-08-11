@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="FlappyBird"
-run/main_scene="uid://c0we148n745ul"
+run/main_scene="uid://b4e2c34f7tmr1"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://scenes/Global/global.tscn"
 
 [display]
 
@@ -27,8 +31,10 @@ window/stretch/aspect="expand"
 2d_physics/layer_1="Bird"
 2d_physics/layer_2="Pipe"
 2d_physics/layer_3="Ground"
+2d_physics/layer_4="PipeMiddleSpace"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
