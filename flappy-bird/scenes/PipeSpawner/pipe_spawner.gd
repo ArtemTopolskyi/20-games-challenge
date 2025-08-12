@@ -6,8 +6,9 @@ const PIPE_WIDTH = 80;
 const PIPE_HEIGHT = 640;
 const PIPES_VERTICAL_GAP = 160;
 
+signal game_over
+
 func start_timer() -> void:
-	print($Timer);
 	$Timer.start();
 
 
@@ -25,6 +26,22 @@ func spawn_pipe():
 		randf_range(-PIPE_HEIGHT / 4, PIPE_HEIGHT / 4)
 	);
 	
+	vertical_pipes.game_end.connect(handle_game_over)
 	vertical_pipes.position = pipes_spawn_position;
 	
 	add_child(vertical_pipes);
+
+func handle_game_over():
+	$Timer.stop();
+	game_over.emit();
+	stop_all_pipes();
+	
+	
+	
+func stop_all_pipes():
+	var children = get_children();
+	print("before loop"); 
+	for child in children:
+		if child.is_in_group("Pipes"):
+			print(child, child.name)
+			child.stop_game();
