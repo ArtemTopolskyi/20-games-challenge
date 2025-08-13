@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0we148n745ul"]
+[gd_scene load_steps=7 format=3 uid="uid://c0we148n745ul"]
 
 [ext_resource type="Script" uid="uid://ewy8xjv4tykd" path="res://scenes/GameWorld/game_world.gd" id="1_vfn31"]
 [ext_resource type="PackedScene" uid="uid://cu0kojsg35dgb" path="res://scenes/Bird/bird.tscn" id="1_xto18"]
 [ext_resource type="PackedScene" uid="uid://bcgbrrdgbvvxm" path="res://scenes/PipeSpawner/pipe_spawner.tscn" id="2_xto18"]
 [ext_resource type="PackedScene" uid="uid://d013knlih05g0" path="res://scenes/Ground/ground.tscn" id="3_vldkp"]
+[ext_resource type="PackedScene" uid="uid://cvtl3nsaj2j15" path="res://scenes/GameFinishedModal/game_finished_modal.tscn" id="5_536h0"]
+[ext_resource type="PackedScene" uid="uid://bwl5fc8txjo4h" path="res://scenes/ScoreLabel/score_label.tscn" id="5_x26tm"]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource("1_vfn31")
@@ -16,9 +18,22 @@ position = Vector2(100, 300)
 [node name="Ground" parent="." instance=ExtResource("3_vldkp")]
 position = Vector2(0, 640)
 
+[node name="ScoreLabel" parent="." instance=ExtResource("5_x26tm")]
+anchors_preset = 10
+anchor_left = 0.0
+anchor_right = 1.0
+offset_left = 176.0
+offset_top = 12.0
+offset_right = 210.0
+offset_bottom = 35.0
+size_flags_horizontal = 1
+
 [node name="StartGameLabel" type="Label" parent="."]
 offset_left = 103.0
 offset_top = 217.0
 offset_right = 337.0
 offset_bottom = 240.0
 text = "Press 'Space' or 'Enter' to start"
+
+[node name="GameFinishedModal" parent="." instance=ExtResource("5_536h0")]
+visible = false

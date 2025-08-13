@@ -6,6 +6,14 @@ const JUMP_VELOCITY = -350.0
 var is_activated = false;
 var jump_triggered = false;
 
+func _ready():
+	Signals.game_over.connect(handle_game_over);
+
+
+func handle_game_over():
+	set_process(false);
+
+
 func activate() -> void:
 	is_activated = true;
 
@@ -20,8 +28,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY;
 		jump_triggered = false;
 		
-	if is_on_floor():
-		print("Player touched the groud; game over");
+	if !Global.is_game_finished && is_on_floor():
+		Signals.game_over.emit();
 	
 	move_and_slide();
 
