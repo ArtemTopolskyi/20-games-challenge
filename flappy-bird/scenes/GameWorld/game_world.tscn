@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0we148n745ul"]
+[gd_scene load_steps=9 format=3 uid="uid://c0we148n745ul"]
 
 [ext_resource type="Script" uid="uid://ewy8xjv4tykd" path="res://scenes/GameWorld/game_world.gd" id="1_vfn31"]
 [ext_resource type="PackedScene" uid="uid://cu0kojsg35dgb" path="res://scenes/Bird/bird.tscn" id="1_xto18"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d013knlih05g0" path="res://scenes/Ground/ground.tscn" id="3_vldkp"]
 [ext_resource type="PackedScene" uid="uid://cvtl3nsaj2j15" path="res://scenes/GameFinishedModal/game_finished_modal.tscn" id="5_536h0"]
 [ext_resource type="PackedScene" uid="uid://bwl5fc8txjo4h" path="res://scenes/ScoreLabel/score_label.tscn" id="5_x26tm"]
+[ext_resource type="Texture2D" uid="uid://bst56hlxrk2rd" path="res://assets/sprites/flappy_bird_background_sky.png" id="7_0okdh"]
+[ext_resource type="Texture2D" uid="uid://dsi5x7cn4x05d" path="res://assets/sprites/flappy_bird_background.png" id="8_sl4fd"]
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource("1_vfn31")
@@ -19,6 +21,7 @@ position = Vector2(100, 300)
 position = Vector2(0, 640)
 
 [node name="ScoreLabel" parent="." instance=ExtResource("5_x26tm")]
+z_index = 5
 anchors_preset = 10
 anchor_left = 0.0
 anchor_right = 1.0
@@ -29,6 +32,7 @@ offset_bottom = 35.0
 size_flags_horizontal = 1
 
 [node name="StartGameLabel" type="Label" parent="."]
+z_index = 5
 offset_left = 103.0
 offset_top = 217.0
 offset_right = 337.0
@@ -37,3 +41,27 @@ text = "Press 'Space' or 'Enter' to start"
 
 [node name="GameFinishedModal" parent="." instance=ExtResource("5_536h0")]
 visible = false
+z_index = 5
+
+[node name="Background" type="Node2D" parent="."]
+z_index = -1
+
+[node name="Sky" type="Sprite2D" parent="Background"]
+position = Vector2(220, 298)
+scale = Vector2(5, 5)
+texture = ExtResource("7_0okdh")
+
+[node name="BackroundTrees" type="Sprite2D" parent="Background"]
+position = Vector2(96, 465)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_sl4fd")
+
+[node name="BackroundTrees2" type="Sprite2D" parent="Background"]
+position = Vector2(252, 465)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_sl4fd")
+
+[node name="BackroundTrees3" type="Sprite2D" parent="Background"]
+position = Vector2(408, 465)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_sl4fd")

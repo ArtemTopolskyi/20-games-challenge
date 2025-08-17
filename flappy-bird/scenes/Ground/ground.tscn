@@ -1,18 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://d013knlih05g0"]
+[gd_scene load_steps=5 format=3 uid="uid://d013knlih05g0"]
 
-[ext_resource type="Texture2D" uid="uid://d1k6cvysmnmbh" path="res://assets/sprites/Green_rectangle.svg.png" id="1_us132"]
+[ext_resource type="Texture2D" uid="uid://biopr1v1y1mu1" path="res://assets/sprites/flappy_bird_ground.png" id="1_kw7vd"]
+[ext_resource type="Script" uid="uid://c3r71fiievbg" path="res://scenes/Ground/ground.gd" id="1_qeq8d"]
+[ext_resource type="Texture2D" uid="uid://ouoyhruijw0t" path="res://assets/sprites/flappy_bird_ground_surface.png" id="2_qeq8d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw7vd"]
-size = Vector2(360, 80)
+size = Vector2(895.5, 80)
 
 [node name="Ground" type="AnimatableBody2D"]
 collision_layer = 4
+script = ExtResource("1_qeq8d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(179.5, -40)
+position = Vector2(447.25, -40)
 shape = SubResource("RectangleShape2D_kw7vd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(180, -40)
-scale = Vector2(0.300833, 0.0901917)
-texture = ExtResource("1_us132")
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(421.75, -12)
+scale = Vector2(7.37891, 1)
+texture = ExtResource("1_kw7vd")
+
+[node name="GroundSurface" type="Sprite2D" parent="Node2D"]
+position = Vector2(64, -80)
+texture = ExtResource("2_qeq8d")
+
+[node name="GroundSurface2" type="Sprite2D" parent="Node2D"]
+position = Vector2(192, -80)
+texture = ExtResource("2_qeq8d")
+
+[node name="GroundSurface3" type="Sprite2D" parent="Node2D"]
+position = Vector2(320, -80)
+texture = ExtResource("2_qeq8d")
+
+[node name="GroundSurface4" type="Sprite2D" parent="Node2D"]
+position = Vector2(448, -80)
+texture = ExtResource("2_qeq8d")
+
+[node name="GroundSurface5" type="Sprite2D" parent="Node2D"]
+position = Vector2(576, -80)
+texture = ExtResource("2_qeq8d")
+
+[node name="GroundSurface6" type="Sprite2D" parent="Node2D"]
+position = Vector2(704, -80)
+texture = ExtResource("2_qeq8d")
+
+[node name="GroundSurface7" type="Sprite2D" parent="Node2D"]
+position = Vector2(832, -80)
+texture = ExtResource("2_qeq8d")

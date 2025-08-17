@@ -11,11 +11,14 @@ func _ready():
 
 
 func handle_game_over():
+	$AnimatedSprite2D.stop();
 	set_process(false);
 
 
 func activate() -> void:
 	is_activated = true;
+	
+	$AnimatedSprite2D.play();
 
 
 func _physics_process(delta: float) -> void:
