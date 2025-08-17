@@ -24,8 +24,7 @@ Signals="*res://scenes/Signals/signals.tscn"
 
 window/size/viewport_width=360
 window/size/viewport_height=640
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [dotnet]
 
